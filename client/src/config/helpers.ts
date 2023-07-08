@@ -5,9 +5,9 @@ export const downloadCanvasToImage = () => {
 
 	link.href = dataURL
 	link.download = 'canvas.png'
-	document.appendChild(link)
+	document.body.appendChild(link)
 	link.click()
-	document.removeChild(link)
+	document.body.removeChild(link)
 }
 
 export const reader = (file: File) =>

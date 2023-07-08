@@ -26,6 +26,13 @@ export const FilterTabs = [
 	},
 ]
 
+export const DownloadTab = [
+	{
+		name: 'download' as const,
+		icons: download,
+	},
+]
+
 export const DecalTyps = {
 	logo: {
 		stateProperty: 'logoDecal' as const,

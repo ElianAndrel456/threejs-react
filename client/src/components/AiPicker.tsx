@@ -22,7 +22,8 @@ export const AiPicker = ({
 				placeholder='Ask AI...'
 				value={prompt}
 				onChange={(e) => setPrompt(e.target.value)}
-				rows={3}
+				rows={4}
+				className='bg-transparent border-b-2 border-gray-300 w-full'
 			/>
 			<input
 				type='text'

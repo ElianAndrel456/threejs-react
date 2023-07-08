@@ -3,13 +3,13 @@ import React from 'react'
 import { useSnapshot } from 'valtio'
 import state from '../store'
 import { fadeAnimation, slideAnimation } from '../config/motion'
-import { DecalTyps, EditorTabs, FilterTabs } from '../config/constanst'
+import { DecalTyps, DownloadTab, EditorTabs, FilterTabs } from '../config/constanst'
 import { Tab } from '../components/Tab'
 import { CustomButton } from '../components/CustomButton'
 import { ColorPicker } from '../components/ColorPicker'
 import { FilePicker } from '../components/FilePicker'
 import { AiPicker } from '../components/AiPicker'
-import { reader } from '../config/helpers'
+import { downloadCanvasToImage, reader } from '../config/helpers'
 
 export const Customizer = () => {
 	const snap = useSnapshot(state)
@@ -153,6 +153,14 @@ export const Customizer = () => {
 								isFilterTab
 								isActiveTab={activeFilterTab[tab.name]}
 								handleClick={() => handleActiveFilterTab(tab.name)}
+							/>
+						))}
+						{DownloadTab.map((tab) => (
+							<Tab
+								key={tab.name}
+								tab={tab}
+								isFilterTab
+								handleClick={() => downloadCanvasToImage()}
 							/>
 						))}
 					</motion.div>
